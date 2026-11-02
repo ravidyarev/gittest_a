@@ -54,7 +54,7 @@ table 'sakila actor'
 				let
 				    Source = MySQL.Database(DBServer, "sakila", [ReturnSingleDatabase=true]),
 				    sakila_actor = Source{[Schema="sakila",Item="actor"]}[Data],
-				    #"Added Conditional Column" = Table.AddColumn(sakila_actor, "TestCustom", each if Text.Contains([first_name], "P") then "Y" else "N")
+				    #"Added Conditional Column" = Table.AddColumn(sakila_actor, "TestCustom", each if Text.Contains([first_name], "A") then "Y" else "N")
 				in
 				    #"Added Conditional Column"
 
