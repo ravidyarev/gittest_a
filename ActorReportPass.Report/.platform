@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ActorReportPass"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1d129a42-0c1e-42fe-8570-da59e81754b0"
+  }
+}
