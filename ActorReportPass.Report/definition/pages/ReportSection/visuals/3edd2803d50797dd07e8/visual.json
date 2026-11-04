@@ -39,6 +39,25 @@
                 }
               },
               "queryRef": "sakila actor.last_name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sakila actor"
+                        }
+                      },
+                      "Property": "actor_id"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(sakila actor.actor_id)",
+              "nativeQueryRef": "Sum of actor_id"
             }
           ]
         }
