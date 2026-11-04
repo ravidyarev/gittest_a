@@ -1,7 +1,7 @@
 name: Promote Dev to Test
 on:
   push:
-    branches: [test]
+    branches: [main]
   workflow_dispatch:
 jobs:
   promote:
@@ -16,7 +16,7 @@ jobs:
             -d "scope=https://analysis.windows.net/powerbi/api/.default" -d "grant_type=client_credentials" | jq -r .access_token)
           echo "::add-mask::$TOKEN"
           echo "token=$TOKEN" >> "$GITHUB_OUTPUT"
-      - name: Trigger deployment (Dev -> Test)
+      - name: Trigger deployment (development -> test)
         run: |
           curl -s -X POST "https://api.powerbi.com/v1.0/myorg/pipelines/${{ vars.PIPELINE_ID }}/deploy" \
             -H "Authorization: Bearer ${{ steps.auth.outputs.token }}" -H "Content-Type: application/json" \
